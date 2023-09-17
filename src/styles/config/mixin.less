@@ -1,0 +1,47 @@
+.padding-x(@padding) {
+    padding-left: @padding;
+    padding-right: @padding;
+}
+
+.padding-y(@padding) {
+    padding-top: @padding;
+    padding-bottom: @padding;
+}
+
+.margin-x(@margin) {
+    margin-left: @margin;
+    margin-right: @margin;
+}
+
+.margin-y(@margin) {
+    margin-top: @margin;
+    margin-bottom: @margin;
+}
+
+.flex-box(@width, @height) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: @width;
+    height: @height;
+}
+
+.flex-row() {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-row-gap(@gap) {
+    .flex-row();
+    gap: @gap;
+}
+
+.flex-col() {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-col-gap(@gap) {
+    .flex-col();
+    gap: @gap;
+}

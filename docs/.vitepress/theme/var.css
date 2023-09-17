@@ -1,0 +1,87 @@
+:root {
+    --vp-home-hero-name-color: transparent;
+    --vp-home-hero-name-background: -webkit-linear-gradient(315deg, #42d392 25%, #369eb8);
+    --vp-button-brand-bg: #11ad79;
+    --vp-button-brand-border: #11ad79;
+    --vp-button-brand-hover-border: #14c489;
+    --vp-button-brand-hover-bg: #14c489;
+    --vp-c-indigo-1: #11ad79;
+    --vp-c-indigo-2: #14c489;
+    --vp-c-indigo-3: #14c489;
+    --vp-layout-max-width: 1850px;
+    --vp-sidebar-width: 400px;
+    --vp-doc-top: 100px;
+    --vp-local-search-highlight-bg: #ffff00;
+    --vp-c-brand: #11ad79;
+    --vp-c-brand-darkest: #0e8d63;
+
+    --vi-color-primary: #242a2f;
+    --vi-mac-bg-color-primary: #ffffff;
+    --vi-bg-color-primary: #ffffff;
+    --vi-welcome-color: #303133;
+
+    --code-color-background: #fff;
+    --code-color-text: #303133;
+    --code-token-keyword: #c792ea;
+    --code-token-function: #717c11;
+    --code-token-string-expression: #3182bd;
+    --code-token-string: #6196cc;
+}
+
+html.dark {
+    --vi-color-primary: #f9f9f9;
+    --vi-mac-bg-color-primary: #35363c;
+    --vi-bg-color-primary: #16161a;
+    --vi-welcome-color: #f9f9f9;
+
+    --code-token-string: #82aaff;
+    --code-color-text: #e5eaf3;
+    --code-token-keyword: #89ddff;
+    --code-token-string-expression: #c3e88d;
+    --code-token-function: #82aaff;
+}
+
+.VPDoc.has-aside .container .content-container {
+    max-width: 900px;
+}
+
+.VPHero.has-image.VPHomeHero {
+    margin-bottom: 20px;
+}
+
+.card {
+    border: 1px solid #e1e1e1;
+    box-shadow: 1px 1px 2px rgba(185, 185, 185, 0.5);
+    border-radius: 5px;
+    padding: 30px 20px;
+    overflow: auto;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row {
+    margin: 0 auto;
+    display: flex;
+}
+
+.vp-doc table {
+    width: 100%;
+    display: inline-table;
+}
+
+.vp-doc tr {
+    border-bottom: 1px solid #e2e2e3;
+    transition: background-color 0.5s;
+}
+
+.vp-doc th,
+.vp-doc td {
+    border: none;
+    padding: 16px 16px;
+    width: auto;
+}
+
+.vp-doc tr:nth-child(2n) {
+    background-color: transparent;
+}

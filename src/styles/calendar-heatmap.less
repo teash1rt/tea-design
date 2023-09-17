@@ -1,0 +1,79 @@
+@import 'config/mixin.less';
+@import 'config/var.less';
+@import 'config/root.less';
+
+@length: 15px;
+
+.t-calendar-heatmap {
+    display: inline-flex;
+    flex-direction: column;
+    background-color: var(--calendar-heatmap-background);
+    padding: 10px;
+
+    &-title {
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 5px;
+        color: var(--calendar-heatmap-topic);
+    }
+
+    &-grid {
+        display: flex;
+    }
+
+    &-day {
+        width: @length;
+        height: @length;
+        margin: 1.6px;
+        background-color: var(--calendar-heatmap-day);
+        border-radius: 3px;
+    }
+}
+
+.tea--level1 {
+    background-color: var(--calendar-heatmap-tea-level1);
+}
+
+.tea--level2 {
+    background-color: var(--calendar-heatmap-tea-level2);
+}
+
+.tea--level3 {
+    background-color: var(--calendar-heatmap-tea-level3);
+}
+
+.tea--level4 {
+    background-color: var(--calendar-heatmap-tea-level4);
+}
+
+.info--level1 {
+    background-color: var(--calendar-heatmap-info-level1);
+}
+
+.info--level2 {
+    background-color: var(--calendar-heatmap-info-level2);
+}
+
+.info--level3 {
+    background-color: var(--calendar-heatmap-info-level3);
+}
+
+.info--level4 {
+    background-color: var(--calendar-heatmap-info-level4);
+}
+
+.wine--level1 {
+    background-color: var(--calendar-heatmap-wine-level1);
+}
+
+.wine--level2 {
+    background-color: var(--calendar-heatmap-wine-level2);
+}
+
+.wine--level3 {
+    background-color: var(--calendar-heatmap-wine-level3);
+}
+
+.wine--level4 {
+    background-color: var(--calendar-heatmap-wine-level4);
+}

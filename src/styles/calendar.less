@@ -1,0 +1,244 @@
+@import 'config/mixin.less';
+@import 'config/var.less';
+@import 'config/root.less';
+
+@font-family: cursive;
+
+// box
+@large-length: 50px;
+@medium-length: 45px;
+@small-length: 40px;
+@mini-length: 35px;
+
+// header
+@large-font: 1.7rem;
+@medium-font: 1.6rem;
+@small-font: 1.55rem;
+@mini-font: 1.5rem;
+
+.element(@width, @height) {
+    .flex-box(@width, @height);
+    margin: 3px;
+}
+
+.t-calendar {
+    border-radius: 30px;
+    width: max-content;
+    padding: 20px;
+    font-family: @font-family;
+    cursor: default;
+}
+
+.header-date--large {
+    font-size: @large-font;
+    font-weight: 600;
+}
+
+.header-date--medium {
+    font-size: @medium-font;
+    font-weight: 600;
+}
+
+.header-date--small {
+    font-size: @small-font;
+    font-weight: 600;
+}
+
+.header-date--mini {
+    font-size: @mini-font;
+    font-weight: 600;
+}
+
+.header-prev,
+.header-next {
+    width: 10px;
+    display: flex;
+    align-items: center;
+    color: gray;
+    font-weight: 900;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.header-prev {
+    justify-content: center;
+}
+
+.header-next {
+    justify-content: end;
+}
+
+.header--month-center > div {
+    display: flex;
+    justify-content: space-between;
+    .padding-x(10px);
+}
+
+.header--today-between > div {
+    display: flex;
+    justify-content: space-between;
+    .padding-x(22px);
+
+    .header-today-group {
+        display: flex;
+
+        .header-today {
+            display: flex;
+            .margin-x(10px);
+            .padding-x(10px);
+            font-size: 1.15rem;
+            align-items: center;
+            cursor: pointer;
+        }
+    }
+}
+
+.header--year-month-center > div {
+    display: flex;
+    justify-content: space-between;
+    .padding-x(18px);
+
+    span:nth-child(3) {
+        width: 60%;
+        // margin: 0 auto;
+        text-align: center;
+    }
+}
+
+.header--simple-center > div {
+    text-align: center;
+}
+
+.t-calendar-week {
+    display: flex;
+    color: var(--theme-grey);
+
+    &-elm--large {
+        .element(@large-length, @large-length - 15px);
+    }
+
+    &-elm--medium {
+        .element(@medium-length, @medium-length - 10px);
+    }
+
+    &-elm--small {
+        .element(@small-length, @small-length - 9px);
+    }
+
+    &-elm--mini {
+        .element(@mini-length, @mini-length - 8px);
+    }
+
+    &-elm--large,
+    &-elm--medium,
+    &-elm--small,
+    &-elm--mini {
+        align-items: end;
+        border: 1px solid transparent;
+    }
+}
+
+.t-calendar-day {
+    display: flex;
+
+    &-elm--large {
+        .element(@large-length, @large-length);
+    }
+
+    &-elm--medium {
+        .element(@medium-length, @medium-length);
+    }
+
+    &-elm--small {
+        .element(@small-length, @small-length);
+    }
+
+    &-elm--mini {
+        .element(@mini-length, @mini-length);
+    }
+
+    &-elm--large,
+    &-elm--medium,
+    &-elm--small,
+    &-elm--mini {
+        border-radius: 50%;
+        border: 1px solid transparent;
+    }
+
+    .is-today--tea {
+        background-color: var(--theme-tea);
+        color: var(--theme-white);
+    }
+
+    .is-today--info {
+        background-color: var(--theme-info);
+        color: var(--theme-white);
+    }
+
+    .is-today--wine {
+        background-color: var(--theme-wine);
+        color: var(--theme-white);
+    }
+
+    .cur-month--tea,
+    .not-cur-month--tea {
+        &:hover {
+            border: 1px solid var(--theme-tea);
+            transition: border 0.6s linear;
+        }
+    }
+
+    .cur-month--info,
+    .not-cur-month--info {
+        &:hover {
+            border: 1px solid var(--theme-info);
+            transition: border 0.6s linear;
+        }
+    }
+
+    .cur-month--wine,
+    .not-cur-month--wine {
+        &:hover {
+            border: 1px solid var(--theme-wine);
+            transition: border 0.6s linear;
+        }
+    }
+
+    .not-cur-month--tea,
+    .not-cur-month--info,
+    .not-cur-month--wine {
+        color: var(--theme-grey);
+    }
+
+    .top {
+        animation: to-top 0.5s ease-in-out;
+    }
+
+    .down {
+        animation: to-down 0.5s ease-in-out;
+    }
+}
+
+@keyframes to-top {
+    0% {
+        transform: translateY(150%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes to-down {
+    0% {
+        transform: translateY(-150%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}

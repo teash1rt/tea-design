@@ -1,0 +1,56 @@
+@import 'config/mixin.less';
+@import 'config/var.less';
+@import 'config/root.less';
+
+.message {
+    position: fixed;
+    font-size: 0.9rem;
+    padding: 7px 14px;
+    border-radius: 4px;
+    min-width: 35px;
+    min-height: 15px;
+    text-align: center;
+}
+
+.arrow {
+    position: fixed;
+    margin-top: 0;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+}
+
+.beforeMount {
+    visibility: hidden;
+}
+
+.message--dark {
+    background-color: var(--theme-dark);
+    color: var(--theme-white);
+}
+
+.message--grey {
+    background-color: var(--theme-grey);
+    color: var(--theme-white);
+}
+
+.message--light {
+    background-color: var(--theme-white);
+    color: var(--theme-dark);
+    box-shadow:
+        0 3px 6px -4px var(--tooltip-shadow1),
+        0 6px 16px 0 var(--tooltip-shadow2),
+        0 9px 28px 8px var(--tooltip-shadow3);
+}
+
+.arrow--dark {
+    border-top-color: var(--theme-dark);
+}
+
+.arrow--grey {
+    border-top-color: var(--theme-grey);
+}
+
+.arrow--light {
+    border-top-color: var(--theme-white);
+}

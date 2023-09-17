@@ -1,0 +1,90 @@
+@import 'config/mixin.less';
+@import 'config/var.less';
+@import 'config/root.less';
+
+.element() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    box-shadow: var(--float-button-shadow) 1px 2px 8px 3px;
+    border-radius: 50%;
+    overflow: hidden;
+    font-size: 0.8rem;
+    background-color: var(--float-button-background);
+}
+
+.t-float-button {
+    position: fixed;
+    z-index: 1000;
+}
+
+.t-float-content {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.t-float-home,
+.t-float-item {
+    .element();
+
+    svg {
+        fill: var(--float-button-svg) !important;
+    }
+}
+
+.edge-enter-to,
+.edge-leave-from {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.edge-enter-from,
+.edge-leave-to {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.edge-enter-active,
+.edge-leave-active {
+    transition:
+        opacity 0.3s linear,
+        transform 0.4s linear;
+}
+
+.origin-enter-to,
+.origin-leave-from {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.origin-enter-from,
+.origin-leave-to {
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+.origin-enter-active,
+.origin-leave-active {
+    transition:
+        opacity 0.3s linear,
+        transform 0.4s linear;
+}
+
+.none-enter-to,
+.none-leave-from {
+    opacity: 1;
+}
+
+.none-enter-from,
+.none-leave-to {
+    opacity: 0;
+}
+
+.none-enter-active,
+.none-leave-active {
+    transition: opacity 0.3s linear;
+}

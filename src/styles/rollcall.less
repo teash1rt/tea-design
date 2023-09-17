@@ -1,0 +1,74 @@
+@import 'config/mixin.less';
+@import 'config/var.less';
+@import 'config/root.less';
+
+.t-rollcall {
+    width: 300px;
+
+    .entity {
+        font-size: 1.4rem;
+    }
+
+    .no-data {
+        color: @grey;
+    }
+
+    &-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+    }
+
+    &-footer {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .divider {
+            border-top: 1px solid var(--roll-call-divider);
+            margin-bottom: 10px;
+            width: 99%;
+        }
+
+        button {
+            border: 1px solid var(--roll-call-button-border);
+            width: 64px;
+            height: 36px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.1s linear;
+            font-size: 0.9rem;
+
+            &:hover {
+                color: var(--roll-call-button-hover);
+                border-color: var(--roll-call-button-hover);
+            }
+        }
+    }
+}
+
+.loading {
+    border: 3px solid var(--roll-call-divider);
+    border-top: 3px solid var(--theme-grey);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear infinite;
+    cursor: not-allowed;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    33.3% {
+        transform: rotate(120deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
