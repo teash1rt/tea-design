@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { RadarChartProps, defaultContext, RadarChartEmits } from './lib/settings'
 import type { RadarChartContextRequired } from './lib/settings'
 import { RadarChart } from './lib/RadarChart'
@@ -21,17 +21,23 @@ const radarRef = ref<HTMLCanvasElement | null>(null)
 
 let lastInsideElement: number | null = null
 
+const handleMouseMove = (e: Event) => {
+    const insideElement = (e as CustomEvent<number | null>).detail
+    if (insideElement !== lastInsideElement) {
+        emit('hover', insideElement)
+        lastInsideElement = insideElement
+    }
+}
+
 onMounted(() => {
     radarRef.value!.width = mergeContext.style.canvasSize
     radarRef.value!.height = mergeContext.style.canvasSize
     new RadarChart(radarRef.value!, mergeContext)
-    radarRef.value!.addEventListener('hover', event => {
-        const insideElement = (event as CustomEvent<number | null>).detail
-        if (insideElement !== lastInsideElement) {
-            emit('hover', insideElement)
-            lastInsideElement = insideElement
-        }
-    })
+    radarRef.value!.addEventListener('hover', handleMouseMove)
+})
+
+onBeforeUnmount(() => {
+    radarRef.value!.removeEventListener('hover', handleMouseMove)
 })
 
 defineOptions({

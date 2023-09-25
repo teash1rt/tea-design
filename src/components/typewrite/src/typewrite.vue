@@ -43,7 +43,7 @@ const handleKeyDown = (event: KeyboardEvent) => {
         } else if (mergeContext.combo === 'multiple') {
             const header = inputQueue.value[0]
             if (header) {
-                const lastElement = inputQueue.value[0][header.length - 1]
+                const lastElement = inputQueue.value[0].at(-1)!
                 const lastKey = isCombo ? inputQueue.value[0][header.length - 2] : lastElement
                 const comboCount = isCombo ? parseInt(lastElement.substring(3, lastElement.length - 1)) : 1
                 if (lastKey === key) {

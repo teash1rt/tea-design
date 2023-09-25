@@ -124,7 +124,7 @@ describe('test the functionality of component calendar heatmap', () => {
         })
 
         const domArr = wrapper.findAll('.t-calendar-heatmap-day')
-        const lastDom = domArr[domArr.length - 1]
+        const lastDom = domArr.at(-1)!
 
         await lastDom.trigger('mouseover')
         expect(wrapper.emitted('hover')![0][0]).toEqual({ date: dateString, count: 13 })
