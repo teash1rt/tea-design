@@ -54,7 +54,7 @@
     width: 10px;
     display: flex;
     align-items: center;
-    color: gray;
+    color: var(--calendar-arrow);
     font-weight: 900;
     font-size: 12px;
     cursor: pointer;
@@ -100,7 +100,6 @@
 
     span:nth-child(3) {
         width: 60%;
-        // margin: 0 auto;
         text-align: center;
     }
 }
@@ -166,41 +165,41 @@
     }
 
     .is-today--tea {
-        background-color: var(--theme-tea);
+        background-color: var(--calendar-tea);
         color: var(--theme-white);
     }
 
     .is-today--info {
-        background-color: var(--theme-info);
+        background-color: var(--calendar-info);
         color: var(--theme-white);
     }
 
     .is-today--wine {
-        background-color: var(--theme-wine);
+        background-color: var(--calendar-wine);
         color: var(--theme-white);
     }
 
     .cur-month--tea,
     .not-cur-month--tea {
         &:hover {
-            border: 1px solid var(--theme-tea);
-            transition: border 0.6s linear;
+            border: 1px solid var(--calendar-tea);
+            transition: border 0.4s linear;
         }
     }
 
     .cur-month--info,
     .not-cur-month--info {
         &:hover {
-            border: 1px solid var(--theme-info);
-            transition: border 0.6s linear;
+            border: 1px solid var(--calendar-info);
+            transition: border 0.4s linear;
         }
     }
 
     .cur-month--wine,
     .not-cur-month--wine {
         &:hover {
-            border: 1px solid var(--theme-wine);
-            transition: border 0.6s linear;
+            border: 1px solid var(--calendar-wine);
+            transition: border 0.4s linear;
         }
     }
 
