@@ -33,7 +33,7 @@ createApp(App).use(TeaDesign).mount('#app')
 
 目前实现了两种按需引入的方式，引入的路径规则为`tea-design/dist/es/ + 组件名（短横线命名）`
 
-如果你的项目是`vue + ts`，则需要新建`.ts`或`.d.ts`文件，在里面使用`declare module [路径]`的形式声明该模块
+如果你的项目是`vue3 + ts`，则需要新建`.ts`或`.d.ts`文件，在里面使用`declare module [路径]`的形式声明该模块
 
 - 全局按需注册
 
