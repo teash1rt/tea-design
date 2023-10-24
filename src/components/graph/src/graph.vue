@@ -159,5 +159,3 @@ defineOptions({
     name: 't-graph'
 })
 </script>
-
-<style lang="less" scoped></style>
