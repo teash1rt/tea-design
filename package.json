@@ -31,10 +31,17 @@
         "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix",
         "format": "prettier --write  \"src/**/*.ts\" \"src/**/*.vue\" \"src/**/*.less\" \"client/**/*.vue\" \"client/**/*.ts\" \"docs/**/*.vue\""
     },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    },
     "dependencies": {
         "vue": "^3.3.4"
     },
     "devDependencies": {
+        "@commitlint/cli": "^18.0.0",
+        "@commitlint/config-conventional": "^18.0.0",
         "@types/node": "^20.4.8",
         "@typescript-eslint/eslint-plugin": "^6.7.0",
         "@typescript-eslint/parser": "^6.6.0",
@@ -48,6 +55,7 @@
         "eslint-plugin-prettier": "^5.0.0",
         "eslint-plugin-vue": "^9.17.0",
         "happy-dom": "^10.9.0",
+        "husky": "^4.0.0",
         "less": "^4.2.0",
         "prettier": "3.0.3",
         "rollup-plugin-visualizer": "^5.9.2",
