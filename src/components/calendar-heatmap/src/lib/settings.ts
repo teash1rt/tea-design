@@ -69,4 +69,14 @@ const CalendarHeatMapEmits = {
     pick: (value: object) => isPlainObject(value)
 }
 
-export { CalendarHeatMapProps, CalendarHeatMapEmits }
+const HeatMapTooltipProps = {
+    tipInfo: {
+        type: String,
+        default: null
+    },
+    theme: {
+        type: String,
+        default: 'dark'
+    }
+}
+export { CalendarHeatMapProps, CalendarHeatMapEmits, HeatMapTooltipProps }

@@ -4,8 +4,8 @@ const getDistance = (point1: Position, point2: Position) => {
     const dx = point2.x - point1.x
     const dy = point2.y - point1.y
     return {
-        dx: dx,
-        dy: dy,
+        dx,
+        dy,
         d: Math.sqrt(dx * dx + dy * dy)
     }
 }
@@ -42,7 +42,7 @@ const getBounce = (
     }
     const { dx, dy, d } = getDistance(sourcePoint, targetPoint)
     let ratio: number
-    // BUG isNormalAdjust 是用在不相连的调整上 如果不需要就删掉
+    // isNormalAdjust 是用在不相连的调整上 如果不需要就删掉
     if (isNormalAdjust) {
         ratio = Math.max(1, validDistance / d)
     } else if (isSimplePoint) {

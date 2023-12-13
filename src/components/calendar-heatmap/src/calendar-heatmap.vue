@@ -6,26 +6,27 @@
         <div class="t-calendar-heatmap-grid">
             <div class="col" v-for="i in props.col" :key="i">
                 <div class="row" v-for="j in row" :key="i * 1000 + j">
-                    <t-tooltip clickTrigger :message="props.tipInfo" v-if="props.tipInfo" :theme="useDark() ? 'grey' : 'dark'">
-                        <template #trigger>
-                            <div
-                                class="t-calendar-heatmap-day"
-                                :class="getClassName(i, j)"
-                                :id="`(${props.col - i},${row - j})`"
-                                :date="getDate(props.col - i, row - j)"
-                                v-if="i != props.col || j <= weeks"
-                                @mouseover="handlePick(getDate(props.col - i, row - j), 0)"
-                                @click="handlePick(getDate(props.col - i, row - j), 1)" />
-                        </template>
-                    </t-tooltip>
-                    <div
-                        class="t-calendar-heatmap-day"
-                        v-else-if="i != props.col || j <= weeks"
-                        :class="getClassName(i, j)"
-                        :id="`(${props.col - i},${row - j})`"
-                        :date="getDate(props.col - i, row - j)"
-                        @mouseover="handlePick(getDate(props.col - i, row - j), 0)"
-                        @click="handlePick(getDate(props.col - i, row - j), 1)" />
+                    <div class="t-calendar-heatmap-day" v-if="i != props.col || j <= weeks">
+                        <heatmap-tooltip :tipInfo="props.tipInfo" v-if="props.tipInfo" :theme="useDark() ? 'grey' : 'dark'">
+                            <template #trigger>
+                                <div
+                                    class="t-calendar-heatmap-day"
+                                    :class="getClassName(i, j)"
+                                    :id="`(${props.col - i},${row - j})`"
+                                    :date="getDate(props.col - i, row - j)"
+                                    @mouseover="handlePick(getDate(props.col - i, row - j), 0)"
+                                    @click="handlePick(getDate(props.col - i, row - j), 1)" />
+                            </template>
+                        </heatmap-tooltip>
+                        <div
+                            class="t-calendar-heatmap-day"
+                            v-else
+                            :class="getClassName(i, j)"
+                            :id="`(${props.col - i},${row - j})`"
+                            :date="getDate(props.col - i, row - j)"
+                            @mouseover="handlePick(getDate(props.col - i, row - j), 0)"
+                            @click="handlePick(getDate(props.col - i, row - j), 1)" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -36,7 +37,7 @@
 import * as utils from './lib/utils'
 import { CalendarHeatMapEmits, CalendarHeatMapProps } from './lib/settings'
 import '../../../styles/calendar-heatmap.less'
-import { default as TTooltip } from '../../tooltip/src/tooltip.vue'
+import heatmapTooltip from './lib/heatmap-tooltip.vue'
 import { useDark } from '../../../common/functions'
 
 const props = defineProps(CalendarHeatMapProps)

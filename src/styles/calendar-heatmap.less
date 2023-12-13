@@ -77,3 +77,42 @@
 .wine--level4 {
     background-color: var(--calendar-heatmap-wine-level4);
 }
+
+.message {
+    position: fixed;
+    font-size: 0.9rem;
+    padding: 7px 14px;
+    border-radius: 4px;
+    min-width: 35px;
+    min-height: 15px;
+    text-align: center;
+}
+
+.arrow {
+    position: fixed;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+
+    &--dark {
+        border-top-color: var(--theme-dark);
+    }
+
+    &--grey {
+        border-top-color: var(--tooltip-grey);
+    }
+}
+
+.beforeMount {
+    visibility: hidden;
+}
+
+.message--dark {
+    background-color: var(--theme-dark);
+    color: var(--theme-white);
+}
+
+.message--grey {
+    background-color: var(--tooltip-grey);
+    color: var(--theme-white);
+}

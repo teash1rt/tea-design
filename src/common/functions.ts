@@ -1,4 +1,6 @@
 import { isPlainObject } from './checks'
+import { useMouseInElement } from '@vueuse/core'
+import type { MaybeElement } from '@vueuse/core'
 
 const useDark = (value?: boolean): boolean => {
     const el = document.querySelector('html')!
@@ -61,4 +63,8 @@ const getRandomId = (length: number) => {
     return result
 }
 
-export { useDark, merge, transparentColor, getRandomId }
+const useMouse = (element: Element | HTMLDivElement) => {
+    return useMouseInElement(element as MaybeElement)
+}
+
+export { useDark, merge, transparentColor, getRandomId, useMouse }

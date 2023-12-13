@@ -1,5 +1,5 @@
 <template>
-    <div ref="t-tooltip">
+    <div class="t-tooltip">
         <div v-if="!dom.triggerOutSide && props.message?.length" :class="isDisplay">
             <div class="message" :class="`message--${props.theme}`" :style="messagePosition" ref="message">
                 <div v-for="(sentence, index) in props.message.split(/(?<!\\)\\n/)" :key="index">
@@ -16,10 +16,10 @@
 </template>
 
 <script setup lang="ts">
-import { MaybeElement, useMouseInElement } from '@vueuse/core'
 import { ref, computed, watch, onMounted, reactive, onBeforeUnmount } from 'vue'
 import { TooltipProps } from './lib/settings'
 import '../../../styles/tooltip.less'
+import { useMouse } from '../../../common/functions'
 
 const props = defineProps(TooltipProps)
 
@@ -45,11 +45,10 @@ const isDisplay = ref<string | null>('beforeMount')
 onMounted(() => {
     window.addEventListener('scroll', handleScroll)
     handleScroll()
-    const triggerDom = ref(trigger.value!.children[0] as MaybeElement)
-    const { isOutside } = useMouseInElement(triggerDom)
+    const { isOutside } = useMouse(trigger.value!.children[0])
     watch(isOutside, newV => {
         dom.triggerOutSide = newV
-        const { elementPositionY, elementPositionX, elementWidth, elementHeight } = useMouseInElement(triggerDom)
+        const { elementPositionY, elementPositionX, elementWidth, elementHeight } = useMouse(trigger.value!.children[0])
         dom.triggerX = elementPositionX.value
         dom.triggerY = elementPositionY.value
         dom.triggerW = elementWidth.value
@@ -61,7 +60,7 @@ onMounted(() => {
 })
 
 watch(message, newV => {
-    const { elementWidth, elementHeight } = useMouseInElement(newV)
+    const { elementWidth, elementHeight } = useMouse(newV!)
     dom.messageW = elementWidth.value
     dom.messageH = elementHeight.value
 })
@@ -88,8 +87,8 @@ const messagePosition = computed(() => {
             break
     }
     return {
-        left: left,
-        top: top
+        left,
+        top
     }
 })
 
@@ -115,8 +114,8 @@ const arrowPosition = computed(() => {
             break
     }
     return {
-        left: left,
-        top: top
+        left,
+        top
     }
 })
 
