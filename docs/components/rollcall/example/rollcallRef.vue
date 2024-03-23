@@ -29,7 +29,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import type { RollcallRef } from '../../../../src/index'
+import type { RollcallRef } from '../../../../src'
 
 const plans = ['A', 'B', 'C', 'D', '空着']
 

@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import type { RadarChartContext } from '../../../../src/index'
+import type { RadarChartContext } from '../../../../src'
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 
 const data = [

@@ -23,7 +23,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import type { GraphRef, GraphContext, Position } from '../../src/index'
+import type { GraphRef, GraphContext, Position } from '../../src'
 
 const graphRef = ref<GraphRef | null>(null)
 

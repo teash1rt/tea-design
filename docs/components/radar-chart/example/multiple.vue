@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import type { RadarChartContext } from '../../../../src/index'
+import type { RadarChartContext } from '../../../../src'
 
 const context: RadarChartContext = {
     style: {

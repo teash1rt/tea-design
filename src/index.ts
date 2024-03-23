@@ -9,7 +9,7 @@ const TeaDesign = {
     }
 }
 
-export * from './components/index'
+export * from './components'
 
 export { useDark } from './common/functions'
 
