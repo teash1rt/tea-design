@@ -26,7 +26,7 @@
 
 Tea Design 是一个专注于实际需求的非通用 Vue3 组件库，它使用 TypeScript 和 Vite 全家桶进行开发和测试
 
-**组件库文档：https://teashirtt.github.io/tea-design**
+**组件库文档：https://teash1rt.github.io/tea-design/**
 
 ## 特性
 
