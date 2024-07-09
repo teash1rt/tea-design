@@ -4,13 +4,13 @@ import floatItem from './src/lib/float-item.vue'
 
 export const TFloatButtonInstall = {
     install: (app: App) => {
-        app.component(floatButton.name, floatButton)
+        app.component(floatButton.name!, floatButton)
     }
 }
 
 export const TFloatItemInstall = {
     install: (app: App) => {
-        app.component(floatItem.name, floatItem)
+        app.component(floatItem.name!, floatItem)
     }
 }
 

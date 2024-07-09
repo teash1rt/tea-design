@@ -4,7 +4,7 @@ import type Rollcall from './src/rollcall.vue'
 
 export const TRollcallInstall = {
     install: (app: App) => {
-        app.component(rollcall.name, rollcall)
+        app.component(rollcall.name!, rollcall)
     }
 }
 

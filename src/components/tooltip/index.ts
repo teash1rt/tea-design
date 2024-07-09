@@ -3,7 +3,7 @@ import tooltip from './src/tooltip.vue'
 
 export const TTooltipInstall = {
     install: (app: App) => {
-        app.component(tooltip.name, tooltip)
+        app.component(tooltip.name!, tooltip)
     }
 }
 

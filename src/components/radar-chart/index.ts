@@ -3,7 +3,7 @@ import radarChart from './src/radar-chart.vue'
 
 export const TRadarChartInstall = {
     install: (app: App) => {
-        app.component(radarChart.name, radarChart)
+        app.component(radarChart.name!, radarChart)
     }
 }
 
