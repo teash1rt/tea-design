@@ -1,7 +1,7 @@
 /// <reference types="vitest" />
 import path from 'path'
 import fs from 'fs'
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 import vue from '@vitejs/plugin-vue'
 import DefineOptions from 'unplugin-vue-define-options/vite'
 import { visualizer } from 'rollup-plugin-visualizer'
@@ -61,10 +61,11 @@ export default defineConfig({
     test: {
         environment: 'happy-dom',
         setupFiles: ['./vitest.setup.ts'],
-        deps: {
-            inline: ['vitest-canvas-mock']
+        server: {
+            deps: {
+                inline: ['vitest-canvas-mock']
+            }
         },
-        threads: false,
         testTimeout: 20000
     }
 })
