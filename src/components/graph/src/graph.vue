@@ -6,11 +6,11 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { merge } from '../../../common/functions'
+import type { Position } from '../../../common/types'
 import { Graph } from './lib/Graph'
 import { GraphProps, defaultContext } from './lib/settings'
 import type { GraphContextRequired } from './lib/settings'
-import { merge } from '../../../common/functions'
-import type { Position } from '../../../common/types'
 import '../../../styles/graph.less'
 
 const props = defineProps(GraphProps)

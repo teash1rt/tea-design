@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
-import tooltip from './src/tooltip.vue'
 import { h } from 'vue'
+import tooltip from './src/tooltip.vue'
 
 describe('test the style of component tooltip', () => {
     it('should exists when hover', async () => {

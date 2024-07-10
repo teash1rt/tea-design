@@ -1,11 +1,11 @@
 /// <reference types="vitest" />
+import path from 'path'
+import fs from 'fs'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import path from 'path'
 import DefineOptions from 'unplugin-vue-define-options/vite'
 import { visualizer } from 'rollup-plugin-visualizer'
 import dts from 'vite-plugin-dts'
-import fs from 'fs'
 
 const customEntry = {}
 const commons = ['canvas', 'errors', 'functions', 'generics', 'checks']

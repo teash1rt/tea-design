@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
-import { useTypewrite } from '.'
 import typewrite from '../typewrite/src/typewrite.vue'
+import { useTypewrite } from '.'
 
 describe('test the style of component typewrite', () => {
     it('should not exists when mounted without any settings', () => {

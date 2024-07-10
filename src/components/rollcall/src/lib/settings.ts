@@ -1,6 +1,6 @@
 import { PropType } from 'vue'
-import type { rollMethod, selectMethod } from './constants'
 import { isArray, isNumber, isString, isBoolean } from '../../../../common/checks'
+import type { rollMethod, selectMethod } from './constants'
 
 const RollcallProps = {
     rollMethod: {

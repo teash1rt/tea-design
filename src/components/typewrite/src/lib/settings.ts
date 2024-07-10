@@ -1,9 +1,9 @@
 import { PropType } from 'vue'
-import type { comboMethod } from './constants'
 import { isPlainObject, isString, isArray } from '../../../../common/checks'
 import type { DeepRequired } from '../../../../common/generics'
 import { merge } from '../../../../common/functions'
 import { throwError } from '../../../../common/errors'
+import type { comboMethod } from './constants'
 
 const TypewriteProps = {
     context: {

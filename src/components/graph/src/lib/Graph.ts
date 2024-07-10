@@ -1,11 +1,11 @@
 import { CanvasObject } from '../../../../common/canvas'
+import type { Position } from '../../../../common/types'
+import { getRandomId } from '../../../../common/functions'
 import { Point } from './Point'
 import { Edge } from './Edge'
 import { Text } from './Text'
-import type { Position } from '../../../../common/types'
 import type { PointContext, EdgeContext, GraphContextRequired } from './settings'
 import * as utils from './utils'
-import { getRandomId } from '../../../../common/functions'
 
 export class Graph extends CanvasObject {
     canvas: HTMLCanvasElement

@@ -1,8 +1,8 @@
 import { CanvasObject } from '../../../../common/canvas'
-import * as utils from './utils'
 import type { Position } from '../../../../common/types'
-import type { EdgeContext } from './settings'
 import { transparentColor } from '../../../../common/functions'
+import * as utils from './utils'
+import type { EdgeContext } from './settings'
 
 export class Edge extends CanvasObject {
     ctx: CanvasRenderingContext2D

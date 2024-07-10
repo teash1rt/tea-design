@@ -6,10 +6,10 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { merge } from '../../../common/functions'
 import { RadarChartProps, defaultContext, RadarChartEmits } from './lib/settings'
 import type { RadarChartContextRequired } from './lib/settings'
 import { RadarChart } from './lib/RadarChart'
-import { merge } from '../../../common/functions'
 import '../../../styles/radar-chart.less'
 
 const props = defineProps(RadarChartProps)

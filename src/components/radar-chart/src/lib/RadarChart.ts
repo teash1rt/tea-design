@@ -1,8 +1,8 @@
-import * as utils from './utils'
 import { CanvasObject } from '../../../../common/canvas'
-import type { RadarChartContextRequired } from './settings'
 import type { Position } from '../../../../common/types'
 import { transparentColor } from '../../../../common/functions'
+import type { RadarChartContextRequired } from './settings'
+import * as utils from './utils'
 
 class RadarChart extends CanvasObject {
     canvas: HTMLCanvasElement

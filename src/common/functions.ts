@@ -1,6 +1,6 @@
-import { isPlainObject } from './checks'
 import { useMouseInElement } from '@vueuse/core'
 import type { MaybeElement } from '@vueuse/core'
+import { isPlainObject } from './checks'
 
 const useDark = (value?: boolean): boolean => {
     const el = document.querySelector('html')!
