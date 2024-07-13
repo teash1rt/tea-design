@@ -30,9 +30,12 @@
     "docs:serve": "vitepress serve docs",
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix",
     "format": "prettier --write  \"src/**/*.ts\" \"src/**/*.vue\" \"src/**/*.less\" \"client/**/*.vue\" \"client/**/*.ts\" \"docs/**/*.vue\"",
-    "prepare": "husky"
+    "prepare": "husky",
+    "commitlint": "commitlint --edit"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
     "@types/node": "^20.4.8",
     "@typescript-eslint/eslint-plugin": "^7.16.0",
     "@typescript-eslint/parser": "^7.16.0",
