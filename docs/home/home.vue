@@ -22,8 +22,8 @@
 import TypeIt from 'typeit'
 import { El } from 'typeit/dist/types'
 import { ref, onMounted, watch } from 'vue'
-import editor from './editor.vue'
 import { useIntersectionObserver } from '@vueuse/core'
+import editor from './editor.vue'
 
 const homeRef = ref(null)
 const isShow = ref<boolean>(false)

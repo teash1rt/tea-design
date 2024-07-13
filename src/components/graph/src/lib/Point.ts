@@ -1,7 +1,7 @@
 import { CanvasObject } from '../../../../common/canvas'
 import type { Position } from '../../../../common/types'
-import type { PointContext } from './settings'
 import { transparentColor } from '../../../../common/functions'
+import type { PointContext } from './settings'
 
 export class Point extends CanvasObject {
     ctx: CanvasRenderingContext2D

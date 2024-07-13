@@ -1,8 +1,8 @@
 import { PropType } from 'vue'
-import type { CalendarHeatMapTheme } from './constants'
-import { verifyDateString } from './utils'
 import { isNumber, isInteger, isString, isPlainObject } from '../../../../common/checks'
 import { throwError } from '../../../../common/errors'
+import type { CalendarHeatMapTheme } from './constants'
+import { verifyDateString } from './utils'
 
 const CalendarHeatMapProps = {
     theme: {

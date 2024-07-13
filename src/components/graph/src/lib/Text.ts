@@ -1,6 +1,6 @@
 import { CanvasObject } from '../../../../common/canvas'
-import { TextContext } from './settings'
 import { transparentColor } from '../../../../common/functions'
+import { TextContext } from './settings'
 
 type Snippet = {
     color: string

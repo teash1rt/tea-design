@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
-import App from './App.vue'
 import TeaDesign from '../src'
+import App from './App.vue'
 import router from './router'
 import './style.less'
 

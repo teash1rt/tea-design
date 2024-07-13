@@ -1,6 +1,6 @@
 import { PropType, InjectionKey, Ref } from 'vue'
-import type { FloatButtonAnimation } from './constants'
 import { isNumber } from '../../../../common/checks'
+import type { FloatButtonAnimation } from './constants'
 
 const FloatButtonProps = {
     animation: {

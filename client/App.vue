@@ -19,8 +19,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useDark } from '../src/common/functions'
 import { useRoute } from 'vue-router'
+import { useDark } from '../src/common/functions'
 
 const route = useRoute()
 

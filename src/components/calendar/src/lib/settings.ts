@@ -1,6 +1,6 @@
 import { PropType } from 'vue'
-import type { CalendarLang, CalendarSize, CalendarHeaderMode, CalendarTheme } from './constants'
 import { isBoolean } from '../../../../common/checks'
+import type { CalendarLang, CalendarSize, CalendarHeaderMode, CalendarTheme } from './constants'
 
 const CalendarProps = {
     mondayFirst: {

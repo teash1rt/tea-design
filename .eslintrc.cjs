@@ -26,9 +26,10 @@ module.exports = {
         parser: '@typescript-eslint/parser',
         sourceType: 'module'
     },
-    plugins: ['@typescript-eslint', 'vue'],
+    plugins: ['@typescript-eslint', 'vue', 'import'],
     rules: {
         'vue/multi-word-component-names': 0,
+        'import/order': 'error',
         camelcase: 2
     },
     ignorePatterns: ['dist/**', 'node_modules/**', 'coverage/**']

@@ -1,6 +1,6 @@
+import { createVNode, render } from 'vue'
 import Typewrite from './src/typewrite.vue'
 import type { TypewriteContext } from './src/lib/settings'
-import { createVNode, render } from 'vue'
 
 export const useTypewrite = (context?: TypewriteContext) => {
     const vm = createVNode(Typewrite, { context: context })

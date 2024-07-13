@@ -1,6 +1,6 @@
 import { PropType } from 'vue'
-import type { TooltipTheme, TooltipPlacement } from './constants'
 import { isString } from '../../../../common/checks'
+import type { TooltipTheme, TooltipPlacement } from './constants'
 
 const TooltipProps = {
     message: {

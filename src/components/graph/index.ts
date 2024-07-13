@@ -4,7 +4,7 @@ import type Graph from './src/graph.vue'
 
 export const TGraphInstall = {
     install: (app: App) => {
-        app.component(graph.name, graph)
+        app.component(graph.name!, graph)
     }
 }
 

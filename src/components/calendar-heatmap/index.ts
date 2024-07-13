@@ -3,7 +3,7 @@ import calendarHeatmap from './src/calendar-heatmap.vue'
 
 export const TCalendarHeatmapInstall = {
     install: (app: App) => {
-        app.component(calendarHeatmap.name, calendarHeatmap)
+        app.component(calendarHeatmap.name!, calendarHeatmap)
     }
 }
 

@@ -10,9 +10,9 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { merge } from '../../../common/functions'
 import { TypewriteProps, defaultContext } from './lib/settings'
 import type { TypewriteInfoRequired } from './lib/settings'
-import { merge } from '../../../common/functions'
 import '../../../styles/typewrite.less'
 
 const props = defineProps(TypewriteProps)
