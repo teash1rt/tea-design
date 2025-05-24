@@ -7,6 +7,7 @@
   "description": "基于Vue3，专注于实际需求的非通用组件库",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
+  "sideEffects": false,
   "keywords": [
     "vue3",
     "vite",
