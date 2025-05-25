@@ -45,7 +45,7 @@ Tea Design 所有组件的测试总覆盖率 &#8805; 94%
 
 我们鼓励前端开发者和设计者共同学习、分享和探索前端开发中的最佳实践和创意
 
-Tea Design 地址: [Tea Design](https://github.com/teashirtt/tea-design)
+Tea Design 地址: [Tea Design](https://github.com/teash1rt/tea-design)
 
 ## 贡献
 
@@ -60,7 +60,7 @@ const members = [
     name: 'TeaShirt',
     title: 'Creator',
     links: [
-      { icon: 'github', link: 'https://github.com/teashirtt' }
+      { icon: 'github', link: 'https://github.com/teash1rt' }
     ]
   }
 ]

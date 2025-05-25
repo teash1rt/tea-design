@@ -16,7 +16,7 @@ export default {
         search: {
             provider: 'local'
         },
-        socialLinks: [{ icon: 'github', link: 'https://github.com/teashirtt/tea-design' }],
+        socialLinks: [{ icon: 'github', link: 'https://github.com/teash1rt/tea-design' }],
         sidebar: {
             '/guide/': [
                 {
