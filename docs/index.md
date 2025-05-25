@@ -13,7 +13,7 @@ hero:
           link: /guide/quickstart
         - theme: alt
           text: 查看源码
-          link: https://github.com/teashirtt/tea-design
+          link: https://github.com/teash1rt/tea-design
 
 features:
     - icon:

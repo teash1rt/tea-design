@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="130px" style="margin-bottom:24px;" src="https://raw.githubusercontent.com/teashirtt/tea-design/master/docs/public/header.png">
+  <img width="130px" style="margin-bottom:24px;" src="https://raw.githubusercontent.com/teash1rt/tea-design/master/docs/public/header.png">
 <h1 style="margin-top: 0px;">Tea Design</h1>
 
 <p>基于Vue3，专注于实际需求的非通用组件库</p>
