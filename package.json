@@ -7,6 +7,13 @@
   "main": "dist/cjs/index.cjs",
   "module": "dist/es/index.js",
   "types": "dist/es/index.d.ts",
+  "exports": {
+    ".": {
+      "module": "./dist/es/index.js",
+      "types": "./dist/es/index.d.ts"
+    },
+    "./style.css": "./dist/cjs/style.css"
+  },
   "sideEffects": false,
   "keywords": [
     "vue3",
@@ -34,7 +41,7 @@
     "prepare": "husky",
     "commitlint": "commitlint --edit"
   },
-  "dependencies":{
+  "dependencies": {
     "@vueuse/core": "^10.4.1"
   },
   "devDependencies": {
