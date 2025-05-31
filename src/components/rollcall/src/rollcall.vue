@@ -21,7 +21,7 @@
 import { ref } from 'vue'
 import * as utils from './lib/utils'
 import { RollcallProps } from './lib/settings'
-import '../../../styles/rollcall.less'
+import './style.less'
 
 const props = defineProps(RollcallProps)
 

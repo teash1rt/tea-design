@@ -11,7 +11,7 @@ import type { Position } from '../../../common/types'
 import { Graph } from './lib/Graph'
 import { GraphProps, defaultContext } from './lib/settings'
 import type { GraphContextRequired } from './lib/settings'
-import '../../../styles/graph.less'
+import './style.less'
 
 const props = defineProps(GraphProps)
 const defaultContextCopy = JSON.parse(JSON.stringify(defaultContext))

@@ -37,8 +37,8 @@
 import { useDark } from '../../../common/functions'
 import * as utils from './lib/utils'
 import { CalendarHeatMapEmits, CalendarHeatMapProps } from './lib/settings'
-import '../../../styles/calendar-heatmap.less'
 import heatmapTooltip from './lib/heatmap-tooltip.vue'
+import './style.less'
 
 const props = defineProps(CalendarHeatMapProps)
 const emit = defineEmits(CalendarHeatMapEmits)

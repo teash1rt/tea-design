@@ -1,5 +1,7 @@
 import type { App } from 'vue'
 import { components } from './components'
+import './styles/root.less'
+import './styles/var.less'
 
 const TeaDesign = {
     install: (app: App) => {

@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import { inject, computed } from 'vue'
 import { FloatButtonContextKey } from './settings.ts'
-import '../../../../styles/float-button.less'
+import '../style.less'
 
 const { floatVisible, animation, gap } = inject(FloatButtonContextKey)!
 

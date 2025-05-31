@@ -50,8 +50,8 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import * as utils from './lib/utils'
-import '../../../styles/calendar.less'
 import { CalendarProps } from './lib/settings'
+import './style.less'
 
 const props = defineProps(CalendarProps)
 
