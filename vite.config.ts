@@ -5,58 +5,55 @@ import vue from '@vitejs/plugin-vue'
 import DefineOptions from 'unplugin-vue-define-options/vite'
 import { visualizer } from 'rollup-plugin-visualizer'
 import dts from 'vite-plugin-dts'
+import { StyleSplit, BuildOutputConfig } from './scripts'
 
-export default defineConfig({
-    plugins: [
-        vue(),
-        DefineOptions(),
-        visualizer({
-            filename: 'stats.html',
-            gzipSize: true
-        }),
-        dts({
-            include: 'src',
-            exclude: '**/test.spec.ts',
-            outDir: 'dist/es'
-        })
-    ],
-    build: {
-        lib: {
-            entry: path.resolve('src/index')
-        },
-        rollupOptions: {
-            external: ['vue', '@vueuse/core'],
-            output: [
-                {
-                    format: 'es',
-                    preserveModules: true,
-                    entryFileNames: '[name].js',
-                    globals: {
-                        vue: 'Vue'
-                    },
-                    exports: 'named',
-                    dir: 'dist/es'
-                },
-                {
-                    format: 'cjs',
-                    globals: {
-                        vue: 'Vue'
-                    },
-                    entryFileNames: '[name].cjs',
-                    exports: 'named',
-                    dir: 'dist/cjs'
+export default defineConfig(({ mode }) => {
+    const isBuildingES = mode === 'es'
+
+    const esPlugin = isBuildingES
+        ? [
+              dts({
+                  include: 'src',
+                  exclude: '**/test.spec.ts',
+                  outDir: 'dist/es'
+              }),
+              StyleSplit()
+          ]
+        : []
+
+    return {
+        plugins: [
+            vue(),
+            DefineOptions(),
+            visualizer({
+                filename: 'stats.html',
+                gzipSize: true
+            }),
+            ...esPlugin
+        ],
+        build: {
+            lib: {
+                entry: path.resolve('src/index')
+            },
+            rollupOptions: {
+                external: ['vue', '@vueuse/core'],
+                output: [BuildOutputConfig(isBuildingES)],
+                onwarn: (warning, defaultHandler) => {
+                    if (warning.code !== 'FILE_NAME_CONFLICT') {
+                        defaultHandler(warning)
+                    }
                 }
-            ]
-        }
-    },
-    test: {
-        environment: 'happy-dom',
-        setupFiles: ['./vitest.setup.ts'],
-        server: {
-            deps: {
-                inline: ['vitest-canvas-mock']
             }
         },
-        testTimeout: 20000
+        test: {
+            environment: 'happy-dom',
+            setupFiles: ['./vitest.setup.ts'],
+            server: {
+                deps: {
+                    inline: ['vitest-canvas-mock']
+                }
+            },
+            testTimeout: 20000
+        }
     }
 })

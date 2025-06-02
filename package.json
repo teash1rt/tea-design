@@ -29,7 +29,7 @@
   ],
   "scripts": {
     "dev": "vite --force --port 5373",
-    "build": "rimraf dist && vite build",
+    "build": "rimraf dist && vite build && vite build -m es",
     "preview": "vite preview",
     "test": "vitest --run",
     "coverage": "vitest run --coverage",
