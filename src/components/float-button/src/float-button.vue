@@ -15,7 +15,7 @@
 import { ref, provide, computed } from 'vue'
 import { FloatButtonProps, FloatButtonContextKey } from './lib/settings'
 import type { FloatButtonContext } from './lib/settings'
-import '../../../styles/float-button.less'
+import './style.less'
 
 const props = defineProps(FloatButtonProps)
 const floatVisible = ref<boolean>(false)

@@ -13,7 +13,7 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { merge } from '../../../common/functions'
 import { TypewriteProps, defaultContext } from './lib/settings'
 import type { TypewriteInfoRequired } from './lib/settings'
-import '../../../styles/typewrite.less'
+import './style.less'
 
 const props = defineProps(TypewriteProps)
 const defaultContextCopy = JSON.parse(JSON.stringify(defaultContext))

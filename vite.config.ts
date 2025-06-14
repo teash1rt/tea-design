@@ -1,71 +1,59 @@
 /// <reference types="vitest" />
 import path from 'path'
-import fs from 'fs'
 import { defineConfig } from 'vitest/config'
 import vue from '@vitejs/plugin-vue'
 import DefineOptions from 'unplugin-vue-define-options/vite'
 import { visualizer } from 'rollup-plugin-visualizer'
 import dts from 'vite-plugin-dts'
+import { StyleSplit, BuildOutputConfig } from './scripts'
 
-const customEntry = {}
-const commons = ['canvas', 'errors', 'functions', 'generics', 'checks']
-for (const e of commons) {
-    customEntry[e] = path.resolve(__dirname, `src/common/${e}.ts`)
-}
-customEntry['index'] = path.resolve(__dirname, 'src/index')
+export default defineConfig(({ mode }) => {
+    const isBuildingES = mode === 'es'
 
-fs.readdirSync(path.resolve(__dirname, 'src/components')).map(name => {
-    if (!name.endsWith('.ts')) {
-        customEntry[name] = path.join(__dirname, 'src/components/' + name + '/index.ts')
-    }
-})
+    const esPlugin = isBuildingES
+        ? [
+              dts({
+                  include: 'src',
+                  exclude: '**/test.spec.ts',
+                  outDir: 'dist/es'
+              }),
+              StyleSplit()
+          ]
+        : []
 
-export default defineConfig({
-    plugins: [
-        vue(),
-        DefineOptions(),
-        visualizer({
-            open: true,
-            filename: 'stats.html',
-            gzipSize: true
-        }),
-        dts({
-            exclude: '**/test.spec.ts'
-        })
-    ],
-    build: {
-        lib: {
-            entry: customEntry,
-            name: 'tea-design',
-            formats: ['es', 'cjs'],
-            fileName: (format, name) => {
-                if (name === 'index') {
-                    return format === 'es' ? 'index.mjs' : 'index.cjs'
-                } else if (commons.includes(name)) {
-                    return format === 'es' ? `common/${name}.mjs` : `common/${name}.cjs`
-                } else {
-                    return format === 'es' ? `es/${name}/index.mjs` : `lib/${name}/index.cjs`
+    return {
+        plugins: [
+            vue(),
+            DefineOptions(),
+            visualizer({
+                filename: 'stats.html',
+                gzipSize: true
+            }),
+            ...esPlugin
+        ],
+        build: {
+            lib: {
+                entry: path.resolve('src/index')
+            },
+            rollupOptions: {
+                external: ['vue', '@vueuse/core'],
+                output: [BuildOutputConfig(isBuildingES)],
+                onwarn: (warning, defaultHandler) => {
+                    if (warning.code !== 'FILE_NAME_CONFLICT') {
+                        defaultHandler(warning)
+                    }
                 }
             }
         },
-        rollupOptions: {
-            external: ['vue'],
-            output: {
-                globals: {
-                    vue: 'Vue'
+        test: {
+            environment: 'happy-dom',
+            setupFiles: ['./vitest.setup.ts'],
+            server: {
+                deps: {
+                    inline: ['vitest-canvas-mock']
                 }
-            }
-        },
-        outDir: 'dist'
-    },
-    test: {
-        environment: 'happy-dom',
-        setupFiles: ['./vitest.setup.ts'],
-        server: {
-            deps: {
-                inline: ['vitest-canvas-mock']
-            }
-        },
-        testTimeout: 20000
+            },
+            testTimeout: 20000
+        }
     }
 })

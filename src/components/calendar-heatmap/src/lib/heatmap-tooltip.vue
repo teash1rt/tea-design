@@ -17,9 +17,9 @@
 
 <script setup lang="ts">
 import { ref, computed, watch, onMounted, reactive, onBeforeUnmount } from 'vue'
-import '../../../../styles/calendar-heatmap.less'
 import { useMouse } from '../../../../common/functions'
 import { HeatMapTooltipProps } from './settings'
+import '../style.less'
 
 const props = defineProps(HeatMapTooltipProps)
 

@@ -19,7 +19,7 @@
 import { ref, computed, watch, onMounted, reactive, onBeforeUnmount } from 'vue'
 import { useMouse } from '../../../common/functions'
 import { TooltipProps } from './lib/settings'
-import '../../../styles/tooltip.less'
+import './style.less'
 
 const props = defineProps(TooltipProps)
 

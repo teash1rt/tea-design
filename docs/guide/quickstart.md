@@ -23,21 +23,18 @@ pnpm install tea-design
 // main.ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import TeaDesign from 'tea-design'
-import 'tea-design/dist/style.css'
+import TeaDesign from 'tea-design';
+import 'tea-design/style.css';
 
 createApp(App).use(TeaDesign).mount('#app')
 ```
 
 ## 按需引入
 
-Tea Design 组件支持 tree shaking，样式暂时需要全额引入
+Tea Design 支持组件的 tree shaking
 
 ```ts
-// main.ts
-import 'tea-design/dist/style.css'
-
-// vue 组件中
+// vue 组件中直接导入即可
 import { TCalendarHeatmap } from 'tea-design'
 import { TGraph } from 'tea-design'
 ```

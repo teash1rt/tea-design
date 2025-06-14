@@ -10,7 +10,7 @@ import { merge } from '../../../common/functions'
 import { RadarChartProps, defaultContext, RadarChartEmits } from './lib/settings'
 import type { RadarChartContextRequired } from './lib/settings'
 import { RadarChart } from './lib/RadarChart'
-import '../../../styles/radar-chart.less'
+import './style.less'
 
 const props = defineProps(RadarChartProps)
 const defaultContextCopy = JSON.parse(JSON.stringify(defaultContext))
