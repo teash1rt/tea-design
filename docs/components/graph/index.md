@@ -1,6 +1,6 @@
 # 节点图 Graph
 
-> 知道为什么点进来有点慢吗？因为这页内容实在有点多...
+> 远吸近斥即是规律
 
 可以用它制作节点图动画
 
@@ -1504,7 +1504,7 @@ const setEdgeColor = () => {
 }
 
 const renderEdge = () => {
-    graphRef.value!.renderEdge(2, 0, '#e3008c', 3)
+    graphRef.value!.renderEdge(2, 0, '#e3008c')
 }
 </script>
 
@@ -1575,7 +1575,7 @@ const setEdgeColor = () => {
 }
 
 const renderEdge = () => {
-    graphRef.value.renderEdge(2, 0, '#e3008c', 3)
+    graphRef.value.renderEdge(2, 0, '#e3008c')
 }
 </script>
 

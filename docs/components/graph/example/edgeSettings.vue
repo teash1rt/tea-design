@@ -48,7 +48,7 @@ const setEdgeColor = () => {
 }
 
 const renderEdge = () => {
-    graphRef.value!.renderEdge(2, 0, '#e3008c', 3)
+    graphRef.value!.renderEdge(2, 0, '#e3008c')
 }
 </script>
 

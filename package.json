@@ -36,7 +36,7 @@
     "docs:dev": "vitepress dev docs --port 5473",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
-    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx",
     "format": "prettier --write  \"src/**/*.ts\" \"src/**/*.vue\" \"src/**/*.less\" \"client/**/*.vue\" \"client/**/*.ts\" \"docs/**/*.vue\"",
     "prepare": "husky",
     "commitlint": "commitlint --edit"

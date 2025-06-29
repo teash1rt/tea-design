@@ -70,20 +70,20 @@ const messagePosition = computed(() => {
     let top = ''
     switch (props.placement) {
         case 'top':
-            left = dom.triggerX + dom.triggerW / 2 - dom.messageW / 2 + 'px'
-            top = dom.triggerY - dom.messageH - scrollTop.value - 9 + 'px'
+            left = `${dom.triggerX + dom.triggerW / 2 - dom.messageW / 2}px`
+            top = `${dom.triggerY - dom.messageH - scrollTop.value - 9}px`
             break
         case 'bottom':
-            left = dom.triggerX + dom.triggerW / 2 - dom.messageW / 2 + 'px'
-            top = dom.triggerY + dom.triggerH - scrollTop.value + 10 + 'px'
+            left = `${dom.triggerX + dom.triggerW / 2 - dom.messageW / 2}px`
+            top = `${dom.triggerY + dom.triggerH - scrollTop.value + 10}px`
             break
         case 'right':
-            left = dom.triggerX + dom.triggerW + 16 + 'px'
-            top = dom.triggerY + dom.triggerH / 2 - dom.messageH / 2 - scrollTop.value + 'px'
+            left = `${dom.triggerX + dom.triggerW + 16}px`
+            top = `${dom.triggerY + dom.triggerH / 2 - dom.messageH / 2 - scrollTop.value}px`
             break
         case 'left':
-            left = dom.triggerX - dom.messageW - 14 + 'px'
-            top = dom.triggerY + dom.triggerH / 2 - dom.messageH / 2 - scrollTop.value + 'px'
+            left = `${dom.triggerX - dom.messageW - 14}px`
+            top = `${dom.triggerY + dom.triggerH / 2 - dom.messageH / 2 - scrollTop.value}px`
             break
     }
     return {
@@ -97,20 +97,20 @@ const arrowPosition = computed(() => {
     let top = ''
     switch (props.placement) {
         case 'top':
-            left = dom.triggerX + dom.triggerW / 2 - 5 + 'px'
-            top = dom.triggerY - scrollTop.value - 10 + 'px'
+            left = `${dom.triggerX + dom.triggerW / 2 - 5}px`
+            top = `${dom.triggerY - scrollTop.value - 10}px`
             break
         case 'bottom':
-            left = dom.triggerX + dom.triggerW / 2 - 5 + 'px'
-            top = dom.triggerY + dom.triggerH - scrollTop.value + 'px'
+            left = `${dom.triggerX + dom.triggerW / 2 - 5}px`
+            top = `${dom.triggerY + dom.triggerH - scrollTop.value}px`
             break
         case 'right':
-            left = dom.triggerX + dom.triggerW + 5 + 'px'
-            top = dom.triggerY + dom.triggerH / 2 - scrollTop.value - 6 + 'px'
+            left = `${dom.triggerX + dom.triggerW + 5}px`
+            top = `${dom.triggerY + dom.triggerH / 2 - scrollTop.value - 6}px`
             break
         case 'left':
-            left = dom.triggerX - 15 + 'px'
-            top = dom.triggerY + dom.triggerH / 2 - scrollTop.value - 6 + 'px'
+            left = `${dom.triggerX - 15}px`
+            top = `${dom.triggerY + dom.triggerH / 2 - scrollTop.value - 6}px`
             break
     }
     return {

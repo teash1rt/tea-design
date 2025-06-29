@@ -174,7 +174,7 @@ export class Graph extends CanvasObject {
             return
         }
         this.sysLock = true
-        await Promise.all([this.points[targetPoint].moveTo(targetPosition, 2)])
+        await this.points[targetPoint].moveTo(targetPosition, 2)
         this.sysLock = false
     }
 
@@ -260,7 +260,7 @@ export class Graph extends CanvasObject {
         }
         this.sysLock = true
         const edgeIndex = this.edgesMap[eid]
-        await Promise.all([this.edges[edgeIndex].render(this.points[startPoint].position, this.points[endPoint].position, color)])
+        await this.edges[edgeIndex].render(this.points[startPoint].position, this.points[endPoint].position, color)
         this.sysLock = false
     }
 
@@ -429,7 +429,7 @@ export class Graph extends CanvasObject {
             return
         }
         for (let i = 0; i < count; i++) {
-            await Promise.all([this.points[targetPoint].blink(arcColor, fillColor, fontColor)])
+            await this.points[targetPoint].blink(arcColor, fillColor, fontColor)
         }
     }
 

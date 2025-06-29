@@ -30,6 +30,7 @@ module.exports = {
     rules: {
         'vue/multi-word-component-names': 0,
         'import/order': 'error',
+        'prefer-template': 'error',
         camelcase: 2
     },
     ignorePatterns: ['dist/**', 'node_modules/**', 'coverage/**']

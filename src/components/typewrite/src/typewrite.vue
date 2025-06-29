@@ -80,11 +80,11 @@ onBeforeUnmount(() => {
 
 const contentStyle = (i: number) => {
     return {
-        bottom: i * 90 + mergeContext.bottom + 'px',
-        right: mergeContext.right + 'px',
+        bottom: `${i * 90 + mergeContext.bottom}px`,
+        right: `${mergeContext.right}px`,
         color: mergeContext.fontColor,
         backgroundColor: mergeContext.backgroundColor,
-        fontSize: mergeContext.fontSize + 'rem',
+        fontSize: `${mergeContext.fontSize}rem`,
         opacity: i ? mergeContext.opacity[1] : mergeContext.opacity[0],
         animation: i ? 'slide-up 0.3s ease-out' : 'none'
     }

@@ -60,10 +60,10 @@ watch([isShow, isMount], newV => {
                 '<br /><span><span style="color:var(--code-token-keyword);">import</span><span style="color:var(--code-color-text);"> TeaDesign </span><span style="color:var(--code-token-keyword);">from</span><span style="color:var(--code-color-text);"> </span><span style="color:var(--code-token-string-expression);">\'tea-design\'</span></span>'
             )
             .type(
-                `<br /><span><span style="color:var(--code-token-keyword);">import</span><span style="color:var(--code-color-text);"> </span><span style="color:var(--code-token-string-expression);">'tea-design/dist/style.css'</span></span>`
+                `<br /><span><span style="color:var(--code-token-keyword);">import</span><span style="color:var(--code-color-text);"> </span><span style="color:var(--code-token-string-expression);">'tea-design/style.css'</span></span>`
             )
             .type(
-                `<br /><br /><br /><span><span style="color:var(--code-token-function);">createApp</span><span style="color:var(--code-color-text);">(app)</span><span style="color:var(--code-token-function);">.use</span><span style="color:var(--code-color-text);">(TeaDesign).</span><span style="color:var(--code-token-function);">mount</span><span style="color:var(--code-color-text);">(</span><span style="color:var(--code-color-text);">'#app'</span><span style="color:var(--code-color-text);">)</span>`
+                `<br /><br /><span><span style="color:var(--code-token-function);">createApp</span><span style="color:var(--code-color-text);">(app)</span><span style="color:var(--code-token-function);">.use</span><span style="color:var(--code-color-text);">(TeaDesign).</span><span style="color:var(--code-token-function);">mount</span><span style="color:var(--code-color-text);">(</span><span style="color:var(--code-color-text);">'#app'</span><span style="color:var(--code-color-text);">)</span>`
             )
             .go()
     }

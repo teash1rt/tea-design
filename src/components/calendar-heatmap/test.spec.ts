@@ -81,22 +81,31 @@ describe('test the boundary condition of component calendar heatmap', () => {
 
 describe('test the functionality of component calendar heatmap', () => {
     it('should have correct level', () => {
+        const getDateString = (offset: number) => {
+            const date = new Date()
+            const newDate = new Date(date.setDate(date.getDate() - offset))
+            const year = newDate.getFullYear()
+            const month = String(newDate.getMonth() + 1).padStart(2, '0')
+            const day = String(newDate.getDate()).padStart(2, '0')
+            return `${year}-${month}-${day}`
+        }
+
         const wrapper = mount(calendarHeatmap, {
             props: {
                 mapData: {
-                    '2023-08-01': 1,
-                    '2023-08-02': 2,
-                    '2023-08-03': 3,
-                    '2023-08-04': 4,
-                    '2023-08-05': 5,
-                    '2023-08-06': 6,
-                    '2023-08-07': 7,
-                    '2023-08-08': 8,
-                    '2023-08-09': 9,
-                    '2023-08-10': 10,
-                    '2023-08-11': 11,
-                    '2023-08-12': 12,
-                    '2023-08-13': 13
+                    [getDateString(47)]: 1,
+                    [getDateString(48)]: 2,
+                    [getDateString(49)]: 3,
+                    [getDateString(50)]: 4,
+                    [getDateString(51)]: 5,
+                    [getDateString(52)]: 6,
+                    [getDateString(53)]: 7,
+                    [getDateString(54)]: 8,
+                    [getDateString(55)]: 9,
+                    [getDateString(56)]: 10,
+                    [getDateString(57)]: 11,
+                    [getDateString(58)]: 12,
+                    [getDateString(59)]: 13
                 },
                 theme: 'wine',
                 thresholds: [0, 3, 6, 9],

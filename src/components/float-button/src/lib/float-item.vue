@@ -19,7 +19,7 @@ const floatItemAnimation = computed(() => {
 
 const itemGap = computed(() => {
     return {
-        marginBottom: gap + 'px'
+        marginBottom: `${gap}px`
     }
 })
 

@@ -1,0 +1,29 @@
+name: Before Merge
+
+on:
+    pull_request:
+        type: [opened, reopened]
+        branches: [master]
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Install
+              run: |
+                  npm i pnpm -g
+                  pnpm install --frozen-lockfile
+
+            - name: Test check
+              run: pnpm test
+
+            - name: Typescript check
+              run: pnpm vue-tsc --noEmit
+
+            - name: Lint check
+              run: pnpm lint
+
+            - name: Build check
+              run: pnpm build

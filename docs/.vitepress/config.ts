@@ -39,8 +39,8 @@ export default {
                 {
                     text: '图表',
                     items: [
-                        { text: '日历热力图 Calendar Heatmap', link: '/components/calendar-heatmap/' },
                         { text: '节点图 Graph', link: '/components/graph/' },
+                        { text: '日历热力图 Calendar Heatmap', link: '/components/calendar-heatmap/' },
                         { text: '雷达图 Radar Chart', link: '/components/radar-chart/' }
                     ]
                 },
