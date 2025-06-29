@@ -4,6 +4,8 @@ on:
     push:
         branches:
             - master
+    schedule:
+      - cron: "0 0 * * *"
 
 jobs:
     deploy:
@@ -14,7 +16,7 @@ jobs:
             - name: Install
               run: |
                   npm i pnpm -g
-                  pnpm install --no-frozen-lockfile
+                  pnpm install --frozen-lockfile
 
             - name: Build
               run: pnpm docs:build
