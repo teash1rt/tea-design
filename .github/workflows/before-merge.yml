@@ -16,11 +16,15 @@ jobs:
                   npm i pnpm -g
                   pnpm install --frozen-lockfile
 
-            - name: Run test
+            - name: Test check
               run: pnpm test
 
-            - name: Run typescript check
+            - name: Typescript check
               run: pnpm vue-tsc --noEmit
             
-            - name: Run lint
+            - name: Lint check
               run: pnpm lint
+            
+            - name: Build check
+              run: pnpm Build
+              run: pnpm docs:build
