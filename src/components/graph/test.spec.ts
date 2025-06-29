@@ -108,10 +108,10 @@ describe('test the functionality of component graph', async () => {
         await new Promise(resolve => setTimeout(resolve, 1000))
         wrapper.vm.setTextColor(id, '#00ff00', 0, 1)
         await new Promise(resolve => setTimeout(resolve, 1000))
-        wrapper.vm.setTextColor(id + '2', '#00ff00', 0, 1)
+        wrapper.vm.setTextColor(`${id}2`, '#00ff00', 0, 1)
         wrapper.vm.setTextColor(id, '#00ff00', -1, -2)
         wrapper.vm.delText(id)
-        wrapper.vm.delText(id + '1')
+        wrapper.vm.delText(`${id}1`)
     })
 
     it('should be different position', () => {

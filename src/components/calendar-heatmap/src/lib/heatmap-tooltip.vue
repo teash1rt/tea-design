@@ -64,15 +64,15 @@ watch(message, newV => {
 
 const messagePosition = computed(() => {
     return {
-        left: dom.triggerX + dom.triggerW / 2 - dom.messageW / 2 + 'px',
-        top: dom.triggerY - dom.messageH - scrollTop.value - 9 + 'px'
+        left: `${dom.triggerX + dom.triggerW / 2 - dom.messageW / 2}px`,
+        top: `${dom.triggerY - dom.messageH - scrollTop.value - 9}px`
     }
 })
 
 const arrowPosition = computed(() => {
     return {
-        left: dom.triggerX + dom.triggerW / 2 - 5 + 'px',
-        top: dom.triggerY - scrollTop.value - 10 + 'px'
+        left: `${dom.triggerX + dom.triggerW / 2 - 5}px`,
+        top: `${dom.triggerY - scrollTop.value - 10}px`
     }
 })
 

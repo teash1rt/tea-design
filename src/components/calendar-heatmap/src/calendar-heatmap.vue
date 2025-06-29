@@ -57,13 +57,13 @@ const getDate = (x: number, y: number) => {
 const getLevel = (count: number) => {
     let className = props.theme
     if (count > props.thresholds[0] && count <= props.thresholds[1]) {
-        return className + '--level1'
+        return `${className}--level1`
     } else if (count > props.thresholds[1] && count <= props.thresholds[2]) {
-        return className + '--level2'
+        return `${className}--level2`
     } else if (count > props.thresholds[2] && count <= props.thresholds[3]) {
-        return className + '--level3'
+        return `${className}--level3`
     } else if (count > props.thresholds[3]) {
-        return className + '--level4'
+        return `${className}--level4`
     }
     return null
 }

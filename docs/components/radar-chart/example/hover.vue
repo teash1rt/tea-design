@@ -58,8 +58,8 @@ const handleMouseMove = (e: MouseEvent) => {
 
 const cardStyle = computed(() => {
     return {
-        top: mouseY.value + 20 + 'px',
-        left: mouseX.value + 20 + 'px'
+        top: `${mouseY.value + 20}px`,
+        left: `${mouseX.value + 20}px`
     }
 })
 

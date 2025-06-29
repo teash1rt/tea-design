@@ -28,7 +28,7 @@ const styleSplitService = () => {
             compress: true
         })
 
-        fs.writeFileSync(path.resolve('dist/es', matchResult[1] + '.css'), css)
+        fs.writeFileSync(path.resolve('dist/es', `${matchResult[1]}.css`), css)
     }
 
     const handleTransTask = () => {

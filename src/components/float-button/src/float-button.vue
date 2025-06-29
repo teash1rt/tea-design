@@ -34,8 +34,8 @@ const changeVisible = () => {
 
 const buttonPosition = computed(() => {
     return {
-        right: props.right + 'px',
-        bottom: props.bottom + 'px'
+        right: `${props.right}px`,
+        bottom: `${props.bottom}px`
     }
 })
 
