@@ -1,4 +1,4 @@
-const getDateString = offset => {
+const getDateString = (offset: number) => {
     const date = new Date()
     const newDate = new Date(date.setDate(date.getDate() - offset))
     const year = newDate.getFullYear()
