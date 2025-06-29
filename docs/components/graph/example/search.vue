@@ -76,7 +76,7 @@ const bfs = async (start: number) => {
     const graph = graphRef.value!.getGraph()
     const queue: Node[] = [{ idx: start, from: null, dis: 0 }]
     const flag = Array(7).fill(false)
-    const bfsData: { [key: number]: Node[] } = {}
+    const bfsData: Record<number, Node[]> = {}
     flag[start] = true
     graphRef.value!.setPointColor(start, '#0ea0cd', '#ffffff', '#000000')
     await graphRef.value!.wait(0.5)
@@ -97,19 +97,23 @@ const bfs = async (start: number) => {
 
     for (let key of Object.keys(bfsData)) {
         const pointToRender: Promise<void>[] = []
-        for (let node of bfsData[key]) {
-            pointToRender.push(graphRef.value!.renderEdge(node.from, node.idx, '#0ea0cd'))
+        for (let node of bfsData[Number(key)]) {
+            if (node.from) {
+                pointToRender.push(graphRef.value!.renderEdge(node.from, node.idx, '#0ea0cd'))
+            }
         }
         await Promise.all(pointToRender)
         await graphRef.value!.wait(0.2)
-        for (let node of bfsData[key]) {
+        for (let node of bfsData[Number(key)]) {
             graphRef.value!.setPointColor(node.idx, '#0ea0cd', '#ffffff', '#000000', true)
         }
     }
     await graphRef.value!.wait(2)
     for (let key of Object.keys(bfsData)) {
-        for (let node of bfsData[key]) {
-            graphRef.value!.setEdgeColor(node.from, node.idx, '#000000', true)
+        for (let node of bfsData[Number(key)]) {
+            if (node.from) {
+                graphRef.value!.setEdgeColor(node.from, node.idx, '#000000', true)
+            }
         }
     }
     for (let i = 0; i < 7; i++) {
