@@ -21,10 +21,9 @@ jobs:
 
             - name: Typescript check
               run: pnpm vue-tsc --noEmit
-            
+
             - name: Lint check
               run: pnpm lint
-            
+
             - name: Build check
-              run: pnpm Build
-              run: pnpm docs:build
+              run: pnpm build
