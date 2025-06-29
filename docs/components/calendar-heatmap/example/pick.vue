@@ -5,21 +5,24 @@
 </template>
 
 <script setup lang="ts">
+import { LIST1 } from '../get-date-list'
+
 const data: { [key: string]: number } = {
-    '2023-10-01': 1,
-    '2023-10-07': 2,
-    '2023-10-20': 3,
-    '2023-11-01': 4,
-    '2023-11-06': 5,
-    '2023-11-12': 6,
-    '2023-11-17': 7,
-    '2023-11-21': 8,
-    '2023-11-28': 9,
-    '2023-11-30': 10,
-    '2023-12-01': 11,
-    '2023-12-06': 12,
-    '2023-12-13': 13
+    [LIST1[0]]: 1,
+    [LIST1[1]]: 2,
+    [LIST1[2]]: 3,
+    [LIST1[3]]: 4,
+    [LIST1[4]]: 5,
+    [LIST1[5]]: 6,
+    [LIST1[6]]: 7,
+    [LIST1[7]]: 8,
+    [LIST1[8]]: 9,
+    [LIST1[9]]: 10,
+    [LIST1[10]]: 11,
+    [LIST1[11]]: 12,
+    [LIST1[12]]: 13
 }
+
 const logInfo = (v: { date: string; count: number | undefined }) => {
     console.log(v)
 }
