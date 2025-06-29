@@ -1,2 +1,7 @@
-#pnpm test
+#!/bin/sh
+
+pnpm lint
+
+pnpm test
+
 exit 0
