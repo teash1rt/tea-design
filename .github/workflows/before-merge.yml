@@ -25,5 +25,8 @@ jobs:
             - name: Lint check
               run: pnpm lint
 
-            - name: Build check
+            - name: Package build check
               run: pnpm build
+
+            - name: Docs build check
+              run: pnpm docs:build
